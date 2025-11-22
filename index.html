@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Öztürk - Öztürk Tercüme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- TEMEL AYARLAR --- */
+        :root {
+            --primary: #004c99; /* Ana Mavi */
+            --dark: #222;       /* Koyu Yazı */
+            --light: #f8f9fa;   /* Açık Arkaplan */
+            --accent: #d32f2f;  /* Kırmızı Buton Rengi */
+            --whatsapp: #25D366; /* WhatsApp Yeşili */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- MENÜ ÇUBUĞU --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center; /* Menü ortalı */
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li { margin: 0 25px; }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* --- KAPAK (HERO) --- */
+        .hero {
+            background-color: var(--primary); 
+            background-image: linear-gradient(rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Alt alta dizilim için */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        /* MARKA BAŞLIĞI (EN BÜYÜK VE YUKARIDA) */
+        .outer-brand-title {
+            font-size: 5rem; /* Yazı boyutu devasa yapıldı */
+            font-weight: 900; 
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px; /* Kutuyla arayı açarak yukarı ittik */
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeDown 1s ease-out;
+            line-height: 1;
+            text-align: center;
+        }
+
+        /* CAM KUTU (Hero Content) */
+        .hero-content {
+            max-width: 900px;
+            padding: 50px 60px;
+            border: 1px solid rgba(255,255,255,0.2); /* İnce zarif çerçeve */
+            background: rgba(255,255,255,0.08); /* Çok hafif cam efekti */
+            backdrop-filter: blur(8px); /* Arkası bulanık */
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Kutu gölgesi */
+            animation: fadeUp 1s ease-out 0.3s backwards; /* Biraz gecikmeli geliş */
+        }
+
+        /* KUTU İÇİNDEKİ İSİM (BİRAZ DAHA KÜÇÜK) */
+        .hero-name {
+            font-size: 3.5rem; /* Markadan küçük olacak şekilde ayarlandı */
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(#fff, #cce0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+        }
+
+        /* KUTU İÇİNDEKİ AÇIKLAMA */
+        .hero-desc {
+            margin-top: 25px;
+            text-align: center;
+            color: #e0e0e0;
+            /* Çizgiyi koruyalım */
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 25px;
+            width: 85%; /* Genişliği biraz artırdık */
+            margin-left: auto; /* Ortalamak için */
+            margin-right: auto;
+        }
+
+        /* 1. Seviye: Yeminli Tercüman (BÜYÜK ve BELİRGİN) */
+        .desc-title {
+            font-size: 2.4rem; /* 2 tık büyütüldü */
+            font-weight: 800;  /* Kalınlık artırıldı */
+            color: #fff;       /* Bembeyaz */
+            text-transform: uppercase; /* Hepsi büyük harf */
+            line-height: 1.2;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        /* 2. Seviye: Almanca - Türkçe (ORTA) */
+        .desc-lang {
+            font-size: 1.8rem; /* Başlıktan küçük, detaydan büyük */
+            font-weight: 600;
+            color: #f0f0f0;    /* Hafif kırık beyaz */
+            margin-bottom: 20px; /* Alttaki detayla arayı aç */
+        }
+
+        /* 3. Seviye: Detaylar (KÜÇÜK) */
+        .desc-details {
+            font-size: 1.1rem; /* Kibar ve okunabilir */
+            font-weight: 300;
+            line-height: 1.6;
+            color: #ccc;       /* Daha gri, geri planda */
+        }
+        .hero-desc strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* BUTON */
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 35px;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05); 
+        }
+
+        /* --- ANİMASYONLAR --- */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- BÖLÜM BAŞLIKLARI --- */
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- KARTLAR VE KONTEYNER DÜZENLEMESİ --- */
+        .container {
+            max-width: 1400px; /* Genişlik artırıldı (Eskiden 1200px idi) */
+            margin: auto;
+            padding: 90px 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            /* Kartların minimum genişliği 220px'e düşürüldü (Eskiden 260px idi) */
+            /* Bu sayede 5 tanesi yan yana sığabilir */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px; /* Boşluklar biraz sıkılaştırıldı */
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- İLETİŞİM --- */
+        .contact-section {
+            background-color: var(--light);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 15px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-box h3 {
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .contact-box a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        
+        .contact-box a:hover { color: var(--accent); }
+
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            border-top: 5px solid var(--primary);
+        }
+
+        /* MOBİL UYUMLULUK - GÜNCELLENDİ */
+        @media (max-width: 768px) {
+            /* Marka Başlığı Mobilde */
+            .outer-brand-title { 
+                font-size: 2.5rem; /* Mobilde de en büyük bu */
+                margin-bottom: 30px; 
+                margin-top: 60px; 
+            }
+
+            /* İsim Mobilde */
+            .hero-name { 
+                font-size: 2rem; /* Başlıktan küçük */
+            }
+
+            /* MOBİL İÇİN KÜÇÜK AYARLAR */
+        @media (max-width: 768px) {
+            .desc-title { font-size: 1.8rem; }
+            .desc-lang { font-size: 1.4rem; }
+            .desc-details { font-size: 1rem; }
+        }
+        
+            /* Menü Ayarları (Önceki düzeltme) */
+            nav ul { 
+                display: flex; 
+                justify-content: center; 
+                padding: 0;
+                width: 100%;
+            }
+            nav ul li { margin: 0 8px; }
+            nav a { font-size: 0.75rem; }
+
+            .hero-content { padding: 30px 20px; width: 90%; }
+            .contact-box { width: 100%; max-width: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="anasayfa" class="hero">
+        
+        <div class="outer-brand-title">
+            ÖZTÜRK TERCÜMANLIK
+        </div>
+
+        <div class="hero-content">
+            
+            <h1 class="hero-name">CAN ÖZTÜRK</h1>
+            
+            <div class="hero-desc">
+                <div class="desc-title">Yeminli Tercüman</div>
+                
+                <div class="desc-lang">Almanca - Türkçe</div>
+                
+                <div class="desc-details">
+                    Yeminli, Noter Onaylı,<br>
+                    Apostilli ve Hukuki<br>
+                    Çeviri Hizmetleri
+                </div>
+            </div>
+            
+            <br>
+            <a href="#iletisim" class="btn">Hemen Ulaşın</a>
+        </div>
+
+    </section>
+
+    <div id="hizmetler" class="container">
+        <div style="text-align: center;">
+            <h2 class="section-title">Hizmetlerimiz</h2>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <span class="icon">📄</span>
+                <h3>Resmi Evraklar</h3>
+                <p>Pasaport, kimlik, ehliyet, doğum belgesi, vukuatlı nüfus kayıt örneği.</p>
+            </div>
+            <div class="card">
+                <span class="icon">⚖️</span>
+                <h3>Hukuki Tercüme</h3>
+                <p>Mahkeme kararları, boşanma belgeleri, sözleşmeler ve vekaletnameler.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🎓</span>
+                <h3>Eğitim Belgeleri</h3>
+                <p>Diploma, transkript, denklik belgeleri ve akademik makale çevirileri.</p>
+            </div>
+            <div class="card">
+                <span class="icon">💼</span>
+                <h3>Ticari & Kurumsal</h3>
+                <p>Şirket kuruluş evrakları, vergi levhası, ticaret sicil gazetesi ve bilançolar.</p>
+            </div>
+            
+            <div class="card">
+                <span class="icon">🗣️</span>
+                <h3>Sözlü Çeviri</h3>
+                <p>Noter, tapu, nikah işlemleri ve iş toplantılarında yeminli sözlü tercüme desteği.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="iletisim" class="contact-section">
+        <h2 class="section-title">İletişim Kanalları</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: #666; margin-bottom: 30px;">
+            Resmi işlemleriniz ve çeviri talepleriniz için aşağıdaki kanallardan Can Öztürk ile iletişime geçebilirsiniz.
+        </p>
+        
+        <div class="contact-info">
+            
+            <div class="contact-box">
+                <span class="icon" style="font-size: 2rem; color: var(--primary);">📍</span>
+                <h3>Ofis Adresi</h3>
+                <p style="font-size: 0.95rem; color: #555;">Akınlar Mahallesi, 2675. Sokak No: 61<br>Düzce / Merkez</p>
+            </div>
+
+            <div class="contact-box">
+                <span class="icon" style="font-size: 2rem; color: var(--primary);">📞</span>
+                <h3>Mobil</h3>
+                <p><a href="tel:+905336121481">+90 533 612 14 81</a></p>
+                <small style="color: #777;">10:00 - 18:00</small>
+            </div>
+
+            <div class="contact-box" style="border: 2px solid #e0f2f1;">
+                <span class="icon" style="font-size: 2rem; color: var(--whatsapp);">📲</span> 
+                <h3 style="color: var(--whatsapp);">WhatsApp</h3>
+                <p><a href="https://wa.me/4915737556254" target="_blank">+49 157 37556254</a></p>
+                <small style="color: #777;">Hızlı İletişim</small>
+            </div>
+
+            <div class="contact-box">
+                <span class="icon" style="font-size: 2rem; color: var(--primary);">📧</span>
+                <h3>E-Posta</h3>
+                <p><a href="mailto:canozturk_81@hotmail.com">canozturk_81@hotmail.com</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Öztürk Tercüme Hizmetleri. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
