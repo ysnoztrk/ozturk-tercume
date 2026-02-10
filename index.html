@@ -94,18 +94,19 @@
             padding: 0 20px;
         }
 
-        /* MARKA BAŞLIĞI (EN BÜYÜK VE YUKARIDA) */
+        /* MARKA BAŞLIĞI */
         .outer-brand-title {
-            font-size: 5rem; /* Yazı boyutu devasa yapıldı */
+            font-size: 3.5rem; 
             font-weight: 900; 
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 50px; /* Kutuyla arayı açarak yukarı ittik */
+            margin-bottom: 30px; 
             text-shadow: 0 10px 30px rgba(0,0,0,0.5);
             animation: fadeDown 1s ease-out;
             line-height: 1;
             text-align: center;
+            margin-top: 80px; 
         }
 
         /* CAM KUTU (Hero Content) */
@@ -120,9 +121,9 @@
             animation: fadeUp 1s ease-out 0.3s backwards; /* Biraz gecikmeli geliş */
         }
 
-        /* KUTU İÇİNDEKİ İSİM (BİRAZ DAHA KÜÇÜK) */
+        /* KUTU İÇİNDEKİ İSİM */
         .hero-name {
-            font-size: 3.5rem; /* Markadan küçük olacak şekilde ayarlandı */
+            font-size: 3.5rem; 
             font-weight: 800;
             margin: 0;
             line-height: 1.1;
@@ -141,36 +142,80 @@
             /* Çizgiyi koruyalım */
             border-top: 1px solid rgba(255,255,255,0.3);
             padding-top: 25px;
-            width: 85%; /* Genişliği biraz artırdık */
-            margin-left: auto; /* Ortalamak için */
+            width: 85%; 
+            margin-left: auto; 
             margin-right: auto;
         }
 
-        /* 1. Seviye: Yeminli Tercüman (BÜYÜK ve BELİRGİN) */
+        /* 1. Seviye: Yeminli Tercüman */
         .desc-title {
-            font-size: 2.4rem; /* 2 tık büyütüldü */
-            font-weight: 800;  /* Kalınlık artırıldı */
-            color: #fff;       /* Bembeyaz */
-            text-transform: uppercase; /* Hepsi büyük harf */
+            font-size: 2.4rem; 
+            font-weight: 800;  
+            color: #fff;       
+            text-transform: uppercase; 
             line-height: 1.2;
             margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
-        /* 2. Seviye: Almanca - Türkçe (ORTA) */
+        /* --- DİL ANİMASYONU --- */
         .desc-lang {
-            font-size: 1.8rem; /* Başlıktan küçük, detaydan büyük */
+            font-size: 1.8rem; 
             font-weight: 600;
-            color: #f0f0f0;    /* Hafif kırık beyaz */
-            margin-bottom: 20px; /* Alttaki detayla arayı aç */
+            color: #f0f0f0;    
+            margin-bottom: 20px;
+            position: relative;
+            height: 1.5em; /* Sabit yükseklik */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* 3. Seviye: Detaylar (KÜÇÜK) */
+        .desc-lang::before,
+        .desc-lang::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; 
+        }
+
+        /* 1. YAZI: Almanca - Türkçe */
+        .desc-lang::before {
+            content: "Almanca - Türkçe";
+            animation: fadeLang1 6s infinite ease-in-out; 
+        }
+
+        /* 2. YAZI: Türkçe - Almanca */
+        .desc-lang::after {
+            content: "Türkçe - Almanca";
+            animation: fadeLang2 6s infinite ease-in-out; 
+        }
+
+        @keyframes fadeLang1 {
+            0%, 40% { opacity: 1; }   /* İlk 2.4sn ekranda kal */
+            45%, 95% { opacity: 0; }  /* Sonra silin ve uzun süre bekle */
+            100% { opacity: 1; }      /* Sonra yavaşça geri gel */
+        }
+
+        @keyframes fadeLang2 {
+            0%, 50% { opacity: 0; }   /* İlk başta bekle (Diğeri ekranda) */
+            55%, 90% { opacity: 1; }  /* Sonra belir ve ekranda kal */
+            95%, 100% { opacity: 0; } /* Sonra silin */
+        }
+        /* ------------------------------------ */
+
+
+        /* 3. Seviye: Detaylar */
         .desc-details {
-            font-size: 1.1rem; /* Kibar ve okunabilir */
+            font-size: 1.1rem; 
             font-weight: 300;
             line-height: 1.6;
-            color: #ccc;       /* Daha gri, geri planda */
+            color: #ccc;       
         }
         .hero-desc strong {
             color: #fff;
@@ -319,26 +364,22 @@
             border-top: 5px solid var(--primary);
         }
 
-        /* --- MOBİL UYUMLULUK (DÜZELTİLMİŞ HALİ) --- */
+        /* --- MOBİL UYUMLULUK --- */
         @media (max-width: 768px) {
-            /* Marka Başlığı Mobilde */
             .outer-brand-title { 
-                font-size: 2.5rem; /* Mobilde de en büyük bu */
+                font-size: 2.5rem; 
                 margin-bottom: 30px; 
-                margin-top: 60px; 
+                margin-top: 80px; 
             }
 
-            /* İsim Mobilde */
             .hero-name { 
-                font-size: 2rem; /* Başlıktan küçük */
+                font-size: 2rem; 
             }
 
-            /* Hiyerarşi Yazı Tipleri */
             .desc-title { font-size: 1.8rem; }
-            .desc-lang { font-size: 1.4rem; }
+            .desc-lang { font-size: 1.4rem; height: 1.4em; }
             .desc-details { font-size: 1rem; }
 
-            /* Menü Ayarları */
             nav ul { 
                 display: flex; 
                 justify-content: center; 
@@ -368,7 +409,7 @@
     <section id="anasayfa" class="hero">
         
         <div class="outer-brand-title">
-            ÖZTÜRK TERCÜMANLIK
+            ÖZTÜRK TERCÜME
         </div>
 
         <div class="hero-content">
@@ -378,7 +419,7 @@
             <div class="hero-desc">
                 <div class="desc-title">Yeminli Tercüman</div>
                 
-                <div class="desc-lang">Almanca - Türkçe</div>
+                <div class="desc-lang"></div>
                 
                 <div class="desc-details">
                     Yeminli, Noter Onaylı,<br>
@@ -439,7 +480,11 @@
             <div class="contact-box">
                 <span class="icon" style="font-size: 2rem; color: var(--primary);">📍</span>
                 <h3>Ofis Adresi</h3>
-                <p style="font-size: 0.95rem; color: #555;">Akınlar Mahallesi, 2675. Sokak No: 61<br>Düzce / Merkez</p>
+                <p style="font-size: 0.95rem;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Akınlar+Mahallesi+2675+Sokak+No+61+Düzce" target="_blank" style="text-decoration: none; color: var(--primary); font-weight: 600; transition: color 0.3s;">
+                        Akınlar Mahallesi, 2675. Sokak No: 61<br>Düzce / Merkez
+                    </a>
+                </p>
             </div>
 
             <div class="contact-box">
@@ -466,12 +511,8 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Öztürk Tercüme Hizmetleri. Tüm Hakları Saklıdır.</p>
+        <p>© 2025 Öztürk Tercüme Hizmetleri. Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
 </html>
-
-
-
-
