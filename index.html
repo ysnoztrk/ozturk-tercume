@@ -13,6 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <meta name="color-scheme" content="light only">
+    
     <title>Öztürk Tercüme - Can Öztürk | Almanca Türkçe Yeminli Tercümanlık</title>
     
     <link rel="icon" href="favicon.png" type="image/png">
@@ -38,14 +40,18 @@
             --light: #f8f9fa;   /* Açık Arkaplan */
             --accent: #d32f2f;  /* Kırmızı Buton Rengi */
             --whatsapp: #25D366; /* WhatsApp Yeşili */
+            
+            /* Tarayıcıya Sadece Light Modu Zorla */
+            color-scheme: light;
         }
 
-        body {
+        /* html ve body için zorunlu beyaz arkaplan */
+        html, body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
             color: var(--dark);
-            background-color: #fff;
+            background-color: #fff !important; /* Zorla Beyaz */
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -301,13 +307,14 @@
         }
 
         .card {
-            background: white;
+            background: white !important; /* Kartlar hep beyaz kalsın */
             border-radius: 15px;
             padding: 40px 30px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             border-top: 4px solid transparent;
+            color: #222 !important; /* Kart içi yazı hep koyu */
         }
 
         .card:hover {
@@ -338,12 +345,13 @@
         }
 
         .contact-box {
-            background: white;
+            background: white !important;
             padding: 35px 20px;
             border-radius: 15px;
             width: 250px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
+            color: #222 !important;
         }
 
         .contact-box:hover {
