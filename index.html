@@ -1,77 +1,132 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3VWTM203L"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-H3VWTM203L');
+        gtag('config', 'G-H3VWTM203L');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta name="color-scheme" content="light only">
-    
+
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+
     <title>Öztürk Tercüme - Can Öztürk | Almanca Türkçe Yeminli Tercümanlık</title>
-    
+
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="favicon.png">
 
-    <meta name="description" content="Öztürk Tercüme - Can Öztürk Yeminli Tercümanlık Hizmetleri. Düzce ve Türkiye geneli Almanca-Türkçe noter onaylı, apostilli, hukuki ve resmi evrak tercüme hizmetleri.">
-    
-    <meta name="keywords" content="Almanca tercüme, Türkçe tercüme, Yeminli Tercüman, Can Öztürk, Öztürk Tercüme, Öztürk Tercümanlık, Düzce tercüme bürosu, Noter onaylı tercüme, Hukuki çeviri, Pasaport çevirisi">
-    
+    <meta name="description"
+        content="Öztürk Tercüme - Can Öztürk Yeminli Tercümanlık Hizmetleri. Düzce ve Türkiye geneli Almanca-Türkçe noter onaylı, apostilli, hukuki ve resmi evrak tercüme hizmetleri.">
+
+    <meta name="keywords"
+        content="Almanca tercüme, Türkçe tercüme, Yeminli Tercüman, Can Öztürk, Öztürk Tercüme, Öztürk Tercümanlık, Düzce tercüme bürosu, Noter onaylı tercüme, Hukuki çeviri, Pasaport çevirisi">
+
     <meta name="robots" content="index, follow">
     <meta name="author" content="Can Öztürk">
-    
+
     <meta name="google-site-verification" content="dz8DMdYaLQjoz7081IOYh0wGi_viux-vrTLkO6lnAGs" />
     <link rel="canonical" href="https://ozturk-tercume.netlify.app/" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* --- TEMEL AYARLAR --- */
+        /* --- TEMEL AYARLAR VE DEĞİŞKENLER --- */
         :root {
-            --primary: #004c99; /* Ana Mavi */
-            --dark: #222;       /* Koyu Yazı */
-            --light: #f8f9fa;   /* Açık Arkaplan */
-            --accent: #d32f2f;  /* Kırmızı Buton Rengi */
-            --whatsapp: #25D366; /* WhatsApp Yeşili */
-            
-            /* Tarayıcıya Sadece Light Modu Zorla */
-            color-scheme: light;
+            /* Light Mode Colors - Shifted back to blue theme */
+            --bg-body: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-nav: rgba(255, 255, 255, 0.95);
+            --bg-contact: #f0f4f8;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --color-primary: #0284c7;
+            /* Sky blue/Ocean blue */
+            --color-primary-hover: #0369a1;
+            --color-accent: #e11d48;
+            --color-accent-hover: #be123c;
+            --card-shadow: 0 10px 40px -10px rgba(2, 132, 199, 0.1);
+            --card-border: 1px solid rgba(2, 132, 199, 0.1);
+            --nav-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            --hero-overlay-1: rgba(2, 44, 73, 0.85);
+            /* Deep blue overlay instead of slate */
+            --hero-overlay-2: rgba(2, 44, 73, 0.65);
         }
 
-        /* html ve body için zorunlu beyaz arkaplan */
-        html, body {
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Mode Colors */
+                --bg-body: #09090b;
+                /* Very dark zinc */
+                --bg-surface: #18181b;
+                --bg-nav: rgba(9, 9, 11, 0.9);
+                --bg-contact: #121214;
+                --text-primary: #f8fafc;
+                --text-secondary: #cbd5e1;
+                --text-muted: #94a3b8;
+                --color-primary: #3b82f6;
+                /* Lighter blue for dark mode readability */
+                --color-primary-hover: #60a5fa;
+                --color-accent: #f43f5e;
+                /* Lighter red */
+                --color-accent-hover: #fb7185;
+                --card-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+                --card-border: 1px solid rgba(255, 255, 255, 0.1);
+                --nav-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+                --hero-overlay-1: rgba(9, 9, 11, 0.9);
+                --hero-overlay-2: rgba(9, 9, 11, 0.8);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
-            background-color: #fff !important; /* Zorla Beyaz */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* --- MENÜ ÇUBUĞU --- */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background-color: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--nav-shadow);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
         nav {
             display: flex;
-            justify-content: center; /* Menü ortalı */
+            justify-content: center;
             align-items: center;
-            padding: 15px 5%;
+            padding: 18px 5%;
             max-width: 1200px;
             margin: auto;
         }
@@ -79,112 +134,112 @@
         nav ul {
             list-style: none;
             display: flex;
-            margin: 0;
-            padding: 0;
         }
 
-        nav ul li { margin: 0 25px; }
+        nav ul li {
+            margin: 0 25px;
+        }
 
         nav a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-primary);
             font-weight: 600;
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-block;
         }
 
-        nav a:hover { color: var(--primary); }
+        nav a:hover {
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
 
         /* --- KAPAK (HERO) --- */
         .hero {
-            background-color: var(--primary); 
-            background-image: linear-gradient(rgba(0, 40, 80, 0.85), rgba(0, 40, 80, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-image: linear-gradient(var(--hero-overlay-1), var(--hero-overlay-2)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             height: 100vh;
+            min-height: 600px;
+            /* Prevent it from being too small on short devices */
             display: flex;
-            flex-direction: column; /* Alt alta dizilim için */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
             padding: 0 20px;
+            position: relative;
         }
 
-        /* MARKA BAŞLIĞI */
         .outer-brand-title {
-            font-size: 3.5rem; 
-            font-weight: 900; 
-            color: #fff;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px; 
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            animation: fadeDown 1s ease-out;
-            line-height: 1;
-            text-align: center;
-            margin-top: 80px; 
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            animation: fadeDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            line-height: 1.1;
+            padding-top: 100px;
         }
 
-        /* CAM KUTU (Hero Content) */
         .hero-content {
             max-width: 900px;
             padding: 50px 60px;
-            border: 1px solid rgba(255,255,255,0.2); /* İnce zarif çerçeve */
-            background: rgba(255,255,255,0.08); /* Çok hafif cam efekti */
-            backdrop-filter: blur(8px); /* Arkası bulanık */
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Kutu gölgesi */
-            animation: fadeUp 1s ease-out 0.3s backwards; /* Biraz gecikmeli geliş */
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
+            transform: translateZ(0);
+            /* Hardware acceleration */
         }
 
-        /* KUTU İÇİNDEKİ İSİM */
         .hero-name {
-            font-size: 3.5rem; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
             margin: 0;
             line-height: 1.1;
             text-transform: uppercase;
-            background: -webkit-linear-gradient(#fff, #cce0ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+            color: #ffffff;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* KUTU İÇİNDEKİ AÇIKLAMA */
         .hero-desc {
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: center;
-            color: #e0e0e0;
-            /* Çizgiyi koruyalım */
-            border-top: 1px solid rgba(255,255,255,0.3);
-            padding-top: 25px;
-            width: 85%; 
-            margin-left: auto; 
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 30px;
+            width: 90%;
+            margin-left: auto;
             margin-right: auto;
         }
 
-        /* 1. Seviye: Yeminli Tercüman */
         .desc-title {
-            font-size: 2.4rem; 
-            font-weight: 800;  
-            color: #fff;       
-            text-transform: uppercase; 
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
             line-height: 1.2;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
         /* --- DİL ANİMASYONU --- */
         .desc-lang {
-            font-size: 1.8rem; 
-            font-weight: 600;
-            color: #f0f0f0;    
-            margin-bottom: 20px;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 500;
+            color: #e2e8f0;
+            margin-bottom: 25px;
             position: relative;
-            height: 1.5em; /* Sabit yükseklik */
+            height: 1.5em;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -200,221 +255,510 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0; 
+            opacity: 0;
+            color: #e2e8f0;
         }
 
-        /* 1. YAZI: Almanca - Türkçe */
         .desc-lang::before {
             content: "Almanca - Türkçe";
-            animation: fadeLang1 6s infinite ease-in-out; 
+            animation: fadeLang1 6s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 2. YAZI: Türkçe - Almanca */
         .desc-lang::after {
             content: "Türkçe - Almanca";
-            animation: fadeLang2 6s infinite ease-in-out; 
+            animation: fadeLang2 6s infinite cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes fadeLang1 {
-            0%, 40% { opacity: 1; }   /* İlk 2.4sn ekranda kal */
-            45%, 95% { opacity: 0; }  /* Sonra silin ve uzun süre bekle */
-            100% { opacity: 1; }      /* Sonra yavaşça geri gel */
-        }
-
-        @keyframes fadeLang2 {
-            0%, 50% { opacity: 0; }   /* İlk başta bekle (Diğeri ekranda) */
-            55%, 90% { opacity: 1; }  /* Sonra belir ve ekranda kal */
-            95%, 100% { opacity: 0; } /* Sonra silin */
-        }
-        /* ------------------------------------ */
-
-
-        /* 3. Seviye: Detaylar */
         .desc-details {
-            font-size: 1.1rem; 
-            font-weight: 300;
-            line-height: 1.6;
-            color: #ccc;       
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.7;
+            color: #cbd5e1;
         }
+
         .hero-desc strong {
-            color: #fff;
+            color: #ffffff;
             font-weight: 600;
         }
 
         /* BUTON */
         .btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 16px 45px;
+            background-color: var(--color-accent);
+            color: #ffffff;
+            padding: 16px 48px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.1rem;
             display: inline-block;
-            margin-top: 35px;
-            transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(211, 47, 47, 0.4);
+            margin-top: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn:hover {
-            background-color: #b71c1c;
-            transform: scale(1.05); 
-        }
-
-        /* --- ANİMASYONLAR --- */
-        @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            background-color: var(--color-accent-hover);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px -5px rgba(225, 29, 72, 0.5);
+            color: #ffffff;
+            /* Ensure text stays white even on hover in all modes */
         }
 
         /* --- BÖLÜM BAŞLIKLARI --- */
         .section-title {
             text-align: center;
-            color: var(--primary);
-            margin-bottom: 50px;
-            font-size: 2.2rem;
-            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 60px;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 800;
             position: relative;
             display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            letter-spacing: -0.5px;
         }
 
-        /* --- KARTLAR VE KONTEYNER DÜZENLEMESİ --- */
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--color-primary);
+            border-radius: 4px;
+        }
+
+        /* --- KARTLAR --- */
         .container {
-            max-width: 1400px; /* Genişlik artırıldı */
+            max-width: 1200px;
             margin: auto;
-            padding: 90px 20px;
+            padding: 100px 24px;
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .card {
-            background: white !important; /* Kartlar hep beyaz kalsın */
-            border-radius: 15px;
+            background-color: var(--bg-surface);
+            border: var(--card-border);
+            border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border-top: 4px solid transparent;
-            color: #222 !important; /* Kart içi yazı hep koyu */
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: calc(33.333% - 20px);
+            min-width: 280px;
+            max-width: 340px;
+        }
+
+        /* Subtle top border decorative element */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
         }
 
         .card:hover {
-            transform: translateY(-10px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-top: 4px solid var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            line-height: 1;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* --- İLETİŞİM --- */
         .contact-section {
-            background-color: var(--light);
-            padding: 80px 20px;
+            background-color: var(--bg-contact);
+            padding: 100px 24px;
             text-align: center;
+        }
+
+        .contact-desc {
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
         }
 
         .contact-box {
-            background: white !important;
-            padding: 35px 20px;
-            border-radius: 15px;
-            width: 250px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            color: #222 !important;
+            background-color: var(--bg-surface);
+            border: 2px solid transparent;
+            /* Replaces border: card-border */
+            padding: 40px 25px;
+            border-radius: 20px;
+            width: 260px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.04;
         }
 
         .contact-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s;
+        }
+
+        .contact-box:hover .contact-icon {
+            transform: scale(1.1);
         }
 
         .contact-box h3 {
-            color: var(--dark);
-            margin-bottom: 5px;
-            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.25rem;
             font-weight: 700;
         }
 
         .contact-box a {
             text-decoration: none;
-            color: var(--primary);
+            color: var(--text-primary);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             transition: color 0.2s;
+            margin-bottom: 8px;
         }
-        
-        .contact-box a:hover { color: var(--accent); }
+
+        .contact-box small {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* --- Theme Colors for Contact Boxes --- */
+
+        .ofis-box {
+            border-color: var(--color-primary);
+        }
+
+        .ofis-box .contact-icon,
+        .ofis-box h3 {
+            color: var(--color-primary);
+        }
+
+        .ofis-box::after {
+            background: var(--color-primary);
+        }
+
+        .ofis-box a:hover {
+            color: var(--color-primary);
+        }
+
+        .mobil-box {
+            border-color: #f59e0b;
+        }
+
+        .mobil-box .contact-icon,
+        .mobil-box h3 {
+            color: #f59e0b;
+        }
+
+        .mobil-box::after {
+            background: #f59e0b;
+        }
+
+        .mobil-box a:hover {
+            color: #f59e0b;
+        }
+
+        .whatsapp-box {
+            border-color: #25D366;
+        }
+
+        .whatsapp-box .contact-icon,
+        .whatsapp-box h3 {
+            color: #25D366;
+        }
+
+        .whatsapp-box::after {
+            background: #25D366;
+        }
+
+        .whatsapp-box a:hover {
+            color: #25D366;
+        }
+
+        .eposta-box {
+            border-color: #8b5cf6;
+        }
+
+        .eposta-box .contact-icon,
+        .eposta-box h3 {
+            color: #8b5cf6;
+        }
+
+        .eposta-box::after {
+            background: #8b5cf6;
+        }
+
+        .eposta-box a:hover {
+            color: #8b5cf6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .ofis-box {
+                border-color: rgba(2, 132, 199, 0.5);
+            }
+
+            .mobil-box {
+                border-color: rgba(245, 158, 11, 0.5);
+            }
+
+            .whatsapp-box {
+                border-color: rgba(37, 211, 102, 0.5);
+            }
+
+            .eposta-box {
+                border-color: rgba(139, 92, 246, 0.5);
+            }
+        }
 
         footer {
-            background: #1a1a1a;
-            color: #888;
+            background-color: #0f172a;
+            /* Always dark for footer */
+            color: #94a3b8;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-            border-top: 5px solid var(--primary);
+            padding: 40px 24px;
+            font-size: 0.95rem;
+        }
+
+        /* Dark mode footer adjustment if needed */
+        @media (prefers-color-scheme: dark) {
+            footer {
+                background-color: #000000;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        /* --- ANİMASYON KEYFRAMELERİ --- */
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeLang1 {
+
+            0%,
+            40% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            45%,
+            95% {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeLang2 {
+
+            0%,
+            50% {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
+
+            55%,
+            90% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            95%,
+            100% {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.95);
+            }
+        }
+
+        /* Scroll Reveal Animasyon Sınıfları */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* --- MOBİL UYUMLULUK --- */
+        @media (max-width: 900px) {
+            .card {
+                width: calc(50% - 15px);
+                /* 2 per row for tablet/mobile */
+            }
+        }
+
         @media (max-width: 768px) {
-            .outer-brand-title { 
-                font-size: 2.5rem; 
-                margin-bottom: 30px; 
-                margin-top: 80px; 
-            }
-
-            .hero-name { 
-                font-size: 2rem; 
-            }
-
-            .desc-title { font-size: 1.8rem; }
-            .desc-lang { font-size: 1.4rem; height: 1.4em; }
-            .desc-details { font-size: 1rem; }
-
-            nav ul { 
-                display: flex; 
-                justify-content: center; 
+            nav ul {
                 padding: 0;
                 width: 100%;
+                justify-content: space-around;
             }
-            nav ul li { margin: 0 8px; }
-            nav a { font-size: 0.75rem; }
 
-            .hero-content { padding: 30px 20px; width: 90%; }
-            .contact-box { width: 100%; max-width: 350px; }
+            nav ul li {
+                margin: 0 5px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            .outer-brand-title {
+                margin-bottom: 15px;
+            }
+
+            .hero-content {
+                padding: 40px 25px;
+                width: 95%;
+                border-radius: 20px;
+            }
+
+            .hero-desc {
+                width: 100%;
+                margin-top: 20px;
+                padding-top: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                padding: 15px 30px;
+            }
+
+            .container,
+            .contact-section {
+                padding: 80px 20px;
+            }
+
+            .services-grid {
+                gap: 20px;
+            }
+
+            .card {
+                width: calc(50% - 10px);
+                /* Tighter gap on smaller mobile */
+                min-width: 0;
+            }
+
+            .contact-info {
+                gap: 20px;
+            }
+
+            .contact-box {
+                width: calc(50% - 10px);
+                min-width: 250px;
+            }
         }
-    </style> 
+
+        @media (max-width: 550px) {
+            .contact-box {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
@@ -428,27 +772,27 @@
     </header>
 
     <section id="anasayfa" class="hero">
-        
+
         <div class="outer-brand-title">
             ÖZTÜRK TERCÜME
         </div>
 
         <div class="hero-content">
-            
+
             <h1 class="hero-name">CAN ÖZTÜRK</h1>
-            
+
             <div class="hero-desc">
                 <div class="desc-title">Yeminli Tercüman</div>
-                
+
                 <div class="desc-lang"></div>
-                
+
                 <div class="desc-details">
                     Yeminli, Noter Onaylı,<br>
                     Apostilli ve Hukuki<br>
                     Çeviri Hizmetleri
                 </div>
             </div>
-            
+
             <br>
             <a href="#iletisim" class="btn">Hemen Ulaşın</a>
         </div>
@@ -457,31 +801,31 @@
 
     <div id="hizmetler" class="container">
         <div style="text-align: center;">
-            <h2 class="section-title">Hizmetlerimiz</h2>
+            <h2 class="section-title reveal">Hizmetlerimiz</h2>
         </div>
         <div class="services-grid">
-            <div class="card">
+            <div class="card reveal" style="transition-delay: 100ms;">
                 <span class="icon">📄</span>
                 <h3>Resmi Evraklar</h3>
                 <p>Pasaport, kimlik, ehliyet, doğum belgesi, vukuatlı nüfus kayıt örneği.</p>
             </div>
-            <div class="card">
+            <div class="card reveal" style="transition-delay: 200ms;">
                 <span class="icon">⚖️</span>
                 <h3>Hukuki Tercüme</h3>
                 <p>Mahkeme kararları, boşanma belgeleri, sözleşmeler ve vekaletnameler.</p>
             </div>
-            <div class="card">
+            <div class="card reveal" style="transition-delay: 300ms;">
                 <span class="icon">🎓</span>
                 <h3>Eğitim Belgeleri</h3>
                 <p>Diploma, transkript, denklik belgeleri ve akademik makale çevirileri.</p>
             </div>
-            <div class="card">
+            <div class="card reveal" style="transition-delay: 400ms;">
                 <span class="icon">💼</span>
                 <h3>Ticari & Kurumsal</h3>
                 <p>Şirket kuruluş evrakları, vergi levhası, ticaret sicil gazetesi ve bilançolar.</p>
             </div>
-            
-            <div class="card">
+
+            <div class="card reveal" style="transition-delay: 500ms;">
                 <span class="icon">🗣️</span>
                 <h3>Sözlü Çeviri</h3>
                 <p>Noter, tapu, nikah işlemleri ve iş toplantılarında yeminli sözlü tercüme desteği.</p>
@@ -491,43 +835,46 @@
     </div>
 
     <div id="iletisim" class="contact-section">
-        <h2 class="section-title">İletişim Kanalları</h2>
-        
-        <p style="max-width: 800px; margin: 0 auto; color: #666; margin-bottom: 30px;">
-            Resmi Evrak, Hukuki Tercüme, Eğitim Belgeleri, Sözlü Çeviri ve Ticari & Kurumsal ihtiyaçlar için yeminli tercüme desteği.<br>
+        <h2 class="section-title reveal">İletişim Kanalları</h2>
+
+        <p class="contact-desc reveal" style="transition-delay: 100ms;">
+            Resmi Evrak, Hukuki Tercüme, Eğitim Belgeleri, Sözlü Çeviri ve Ticari & Kurumsal ihtiyaçlar için yeminli
+            tercüme desteği.<br>
             Resmi işlemleriniz ve çeviri talepleriniz için ulaşabilirsiniz.
         </p>
-        
+
         <div class="contact-info">
-            
-            <div class="contact-box">
-                <span class="icon" style="font-size: 2rem; color: var(--primary);">📍</span>
+
+            <div class="contact-box ofis-box reveal" style="transition-delay: 200ms;">
+                <span class="contact-icon">📍</span>
                 <h3>Ofis Adresi</h3>
-                <p style="font-size: 0.95rem;">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Akınlar+Mahallesi+2675+Sokak+No+61+Düzce" target="_blank" style="text-decoration: none; color: var(--primary); font-weight: 600; transition: color 0.3s;">
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Akınlar+Mahallesi+2675+Sokak+No+61+Düzce"
+                        target="_blank">
                         Akınlar Mahallesi, 2675. Sokak No: 61<br>Düzce / Merkez
                     </a>
                 </p>
             </div>
 
-            <div class="contact-box">
-                <span class="icon" style="font-size: 2rem; color: var(--primary);">📞</span>
+            <div class="contact-box mobil-box reveal" style="transition-delay: 300ms;">
+                <span class="contact-icon">📞</span>
                 <h3>Mobil</h3>
                 <p><a href="tel:+905336121481">+90 533 612 14 81</a></p>
-                <small style="color: #777;">10:00 - 18:00</small>
+                <small>10:00 - 18:00</small>
             </div>
 
-            <div class="contact-box" style="border: 2px solid #e0f2f1;">
-                <span class="icon" style="font-size: 2rem; color: var(--whatsapp);">📲</span> 
-                <h3 style="color: var(--whatsapp);">WhatsApp</h3>
+            <div class="contact-box whatsapp-box reveal" style="transition-delay: 400ms;">
+                <span class="contact-icon">📲</span>
+                <h3>WhatsApp</h3>
                 <p><a href="https://wa.me/4915737556254" target="_blank">+49 157 37556254</a></p>
-                <small style="color: #777;">Hızlı İletişim</small>
+                <small>Hızlı İletişim</small>
             </div>
 
-            <div class="contact-box">
-                <span class="icon" style="font-size: 2rem; color: var(--primary);">📧</span>
+            <div class="contact-box eposta-box reveal" style="transition-delay: 500ms;">
+                <span class="contact-icon">📧</span>
                 <h3>E-Posta</h3>
-                <p><a href="mailto:canozturk_81@hotmail.com">canozturk_81@hotmail.com</a></p>
+                <p><a href="mailto:canozturk_81@hotmail.com" style="word-break: break-all;">canozturk_81@hotmail.com</a>
+                </p>
             </div>
 
         </div>
@@ -537,5 +884,52 @@
         <p>© 2025 Öztürk Tercüme Hizmetleri. Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll for Nav Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Scroll Reveal Animation Observer
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealOptions = {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            // Navbar background transition on scroll
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = 'var(--nav-shadow)';
+                    header.style.padding = '10px 0'; // Slight shrink effect
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.padding = '18px 0';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
