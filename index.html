@@ -163,28 +163,32 @@
             background-position: center;
             background-attachment: fixed;
             height: 100vh;
-            min-height: 600px;
+            min-height: 650px;
             /* Prevent it from being too small on short devices */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 100px 20px 40px 20px;
+            /* Safe padding for navbar */
             position: relative;
         }
 
         .outer-brand-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            /* Reduced minimum */
             font-weight: 800;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
             text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
             animation: fadeDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
             line-height: 1.1;
-            padding-top: 100px;
+            width: 100%;
+            word-wrap: break-word;
+            /* Prevent horizontal overflow */
         }
 
         .hero-content {
@@ -705,6 +709,9 @@
 
             .outer-brand-title {
                 margin-bottom: 15px;
+                font-size: clamp(1.4rem, 7vw, 2.5rem);
+                /* Strong down-scaling for mobile */
+                letter-spacing: 2px;
             }
 
             .hero-content {
